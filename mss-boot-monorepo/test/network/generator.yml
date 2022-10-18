@@ -1,0 +1,42 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: generator
+spec:
+  gateways:
+    - mss-boot-io-gateway
+  hosts:
+    - beta.api.mss-boot-io.top
+  http:
+    - name: http
+      corsPolicy:
+        allowHeaders:
+          - Accept
+          - Accept-Version
+          - Content-Length
+          - Content-MD5
+          - Content-Type
+          - Date
+          - Authorization
+          - authorization
+        allowMethods:
+          - GET
+          - POST
+          - OPTIONS
+          - DELETE
+          - PUT
+        allowOrigins:
+          - regex: https://(.*).mss-boot.workers.dev
+          - regex: https://(.*).mss-boot-io.top
+        exposeHeaders:
+          - Authorization
+          - authorization
+        maxAge: 3600s
+      match:
+        - uri:
+            prefix: /generator
+      route:
+        - destination:
+            host: generator
+            port:
+              number: 8081

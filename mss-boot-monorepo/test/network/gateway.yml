@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - hosts:
+        - beta.api.mss-boot-io.top
+      port:
+        name: https
+        number: 443
+        protocol: HTTPS
+      tls:
+        credentialName: mss-boot-io-certs-beta
+        mode: SIMPLE
+metadata:
+  name: mss-boot-io-gateway
