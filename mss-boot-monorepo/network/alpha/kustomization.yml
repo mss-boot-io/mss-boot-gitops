@@ -3,6 +3,5 @@ kind: Kustomization
 namespace: alpha
 resources:
   - admin.yml
-  - certificate.yml
   - gateway.yml
   - generator.yml
