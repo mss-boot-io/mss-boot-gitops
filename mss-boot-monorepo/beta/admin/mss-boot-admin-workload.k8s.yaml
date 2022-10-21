@@ -30,7 +30,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: mssbootio/admin:1e58180a16cf3732a46dc1f89ceb79dd8a229773
+          image: mssbootio/admin:82fb798945495a2b07ec90a4b36e2ba5930d71d9
           name: admin
           ports:
             - containerPort: 8080
