@@ -30,7 +30,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: mssbootio/generator:d9c8893c9dab4d551e1cb9bfe3affe633ca9aedb
+          image: mssbootio/generator:ea3b199b736ab530014e5970e5391444231cff68
           name: generator
           ports:
             - containerPort: 8081
