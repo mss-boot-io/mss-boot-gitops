@@ -1,16 +1,18 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: mss-boot-io-certs-alpha
+  name: mss-boot-io-certs
   namespace: istio-system
 spec:
-  commonName: alpha.api.mss-boot-io.top
+  commonName: api.mss-boot-io.top
   dnsNames:
+    - api.mss-boot-io.top
+    - beta.api.mss-boot-io.top
     - alpha.api.mss-boot-io.top
   issuerRef:
     group: cert-manager.io
     kind: ClusterIssuer
     name: letsencrypt-istio-prod
-  secretName: mss-boot-io-certs-alpha
+  secretName: mss-boot-io-certs
   duration: 2160h0m0s
   renewBefore: 360h0m0s
