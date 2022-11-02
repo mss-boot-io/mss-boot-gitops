@@ -3,6 +3,7 @@ kind: Service
 metadata:
   labels:
     app: generator
+    project: mss-boot
     version: v1
   name: generator
 spec:
