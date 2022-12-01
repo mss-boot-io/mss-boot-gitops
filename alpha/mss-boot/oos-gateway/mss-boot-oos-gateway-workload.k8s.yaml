@@ -33,7 +33,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: mssbootio/oos-gateway:c7a107d3e23f99904460e0c997be1542dc7baf8b
+          image: mssbootio/oos-gateway:748c24696e5377bf6bc37e7985948b4c98c62d8e
           name: oos-gateway
           ports:
             - containerPort: 8080
