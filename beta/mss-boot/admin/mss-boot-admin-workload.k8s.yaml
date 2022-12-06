@@ -33,7 +33,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: :d563703cdf14bfb1e5547c9d36f2c3ab1a492182
+          image: :880b13f3c4c90468f43f30cf52ae660c0ed1eeb9
           name: admin
           ports:
             - containerPort: 8080
