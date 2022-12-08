@@ -33,7 +33,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: mssbootio/s3-gateway:0bb3707fe61d7c3dd094f95f2284a71041ad7fa8
+          image: mssbootio/s3-gateway:a6f964ed1c78514152b1bb006a18f377b39a0ad4
           name: s3-gateway
           ports:
             - containerPort: 8080
