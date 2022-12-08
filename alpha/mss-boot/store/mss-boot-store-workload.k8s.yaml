@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: generator
+    app: store
     project: mss-boot
     version: v1
-  name: generator
+  name: store
 spec:
   selector:
     matchLabels:
-      app: generator
+      app: store
       project: mss-boot
       version: v1
   template:
@@ -19,7 +19,7 @@ spec:
         prometheus.io/port: "5000"
         prometheus.io/scrape: "true"
       labels:
-        app: generator
+        app: store
         project: mss-boot
         version: v1
     spec:
@@ -33,16 +33,16 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: mssbootio/generator:0bb3707fe61d7c3dd094f95f2284a71041ad7fa8
-          name: generator
+          image: mssbootio/store:0bb3707fe61d7c3dd094f95f2284a71041ad7fa8
+          name: store
           ports:
-            - containerPort: 8081
+            - containerPort: 9090
           resources: {}
           volumeMounts:
             - mountPath: /app/cfg
-              name: mss-boot-generator-config
+              name: mss-boot-store-config
               readOnly: true
       volumes:
         - configMap:
-            name: mss-boot-generator-config
-          name: mss-boot-generator-config
+            name: mss-boot-store-config
+          name: mss-boot-store-config
